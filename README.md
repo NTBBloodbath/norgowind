@@ -11,6 +11,12 @@ lith theme pull github:NTBBloodbath/norgowind
 > Currently, Norgowind requires the latest Norgolith commit in the master branch in order to work.
 
 ## Usage
+
+> [!TIP]
+>
+> As Norgowind has been written using the standalone TailwindCSS CLI, you might want to use it if
+> you plan to modify the CSS of the theme by hand.
+
 ### Configuration
 Besides the default `norgolith.toml` configuration options, Norgowind theme also requires the following configuration fields to be present:
 
