@@ -14,7 +14,7 @@
         {% endif %}
       {% endfor %}
       <li>
-        <a class="font-mono text-xl no-underline! hover:underline! hover:decoration-dashed" href="{{ config.rootUrl }}/categories/{{ category }}">{{ category }}</a>
+        <a class="font-mono text-xl no-underline! hover:underline! hover:decoration-dashed" href="/categories/{{ category }}">{{ category }}</a>
         <span class="text-grey">({{ cat_posts }} post{{ cat_posts | pluralize }})</span>
       </li>
     {% endfor %}

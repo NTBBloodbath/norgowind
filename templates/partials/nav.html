@@ -2,7 +2,7 @@
   <div class="flex items-center justify-between h-16">
     <!-- Logo and dark mode -->
     <div x-data="theme" class="flex items-center shrink-0">
-      <a href="{{ config.rootUrl }}" class="flex items-center space-x-2">
+      <a href="/" class="flex items-center space-x-2">
         <!-- <img src="{{ config.rootUrl }}/assets/norgolith.svg" alt="Norgolith Logo" class="h-8 w-8"> -->
         <span class="text-xl font-bold text-text">{{ config.title | title }}</span>
       </a>
@@ -23,11 +23,7 @@
       <a
         :class="{ 'text-blue!': currentPage.startsWith('{{ link }}') }"
         class="text-text-alt hover:text-blue px-3 py-2 rounded-md text-sm font-medium"
-        {% if link is starting_with("/") %}
-        href="{{ config.rootUrl }}{{ link }}"
-        {% else %}
         href="{{ link }}"
-        {% endif %}
       >{{ name | title }}</a>
       {% endfor %}
     </div>
@@ -55,11 +51,7 @@
       <a
         :class="{ 'text-blue!': currentPage.startsWith('{{ link }}') }"
         class="text-text-alt hover:text-blue px-3 py-2 rounded-md text-sm font-medium"
-        {% if link is starting_with("/") %}
-        href="{{ config.rootUrl }}{{ link }}"
-        {% else %}
         href="{{ link }}"
-        {% endif %}
       >{{ name | title }}</a>
       {% endfor %}
     </div>
