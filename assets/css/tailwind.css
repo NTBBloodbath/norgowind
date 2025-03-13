@@ -117,7 +117,7 @@ html {
 }
 
 body {
-  @apply bg-base text-text antialiased font-medium text-text lg:text-lg xl:text-xl;
+  @apply bg-base text-text antialiased font-medium lg:text-lg xl:text-xl;
 }
 
 main a {
@@ -190,11 +190,11 @@ ol {
 
 nav ul,
 nav ol {
-  @apply space-y-0 list-none;
+  @apply mx-4 space-y-0 list-none;
 }
 
-li {
-  @apply mx-4;
+main ul {
+  @apply pl-4;
 }
 
 main h2,
