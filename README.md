@@ -72,6 +72,8 @@ using `+html.class` weak carryover tags):
 - `warning` (yellow)
 - `error` (red)
 
+![blockquotes.png](https://github.com/user-attachments/assets/d45e2e97-5e3b-43cb-8077-a16f737259b9)
+
 ### Additional metadata fields
 Norgowind also accepts and uses the following opt-in content metadata:
 
