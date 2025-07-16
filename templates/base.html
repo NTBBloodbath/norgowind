@@ -56,6 +56,7 @@
   {% endif %}
 
   {# AlpineJS #}
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
       document.addEventListener("alpine:init", () => {
@@ -70,10 +71,11 @@
           }));
 
           Alpine.data("toc", () => ({
-            open: true,
+            open: false,
 
             toggle() {
               this.open = !this.open;
+              document.querySelector("#toc-toggle-icon").classList.toggle("rotate-90");
             }
           }));
 
@@ -115,16 +117,18 @@
   {% endblock head %}
 </head>
 <body>
-  <header class="relative shadow-sm">
-    {% include "partials/nav.html" %}
-  </header>
+  <div class="transition-colors duration-150 ease-linear">
+    <header class="relative shadow-sm">
+      {% include "partials/nav.html" %}
+    </header>
 
-  <main class="container mx-auto min-h-screen pt-8 px-4 md:px-0">
-    {% block content %}{% endblock content %}
-  </main>
+    <main class="container mx-auto min-h-screen pt-8 px-4 md:px-0">
+      {% block content %}{% endblock content %}
+    </main>
 
-  <footer class="mt-8 py-4 px-6 w-full font-mono">
-    {% include "partials/footer.html" %}
-  </footer>
+    <footer class="mt-8 py-4 px-6 w-full font-mono">
+      {% include "partials/footer.html" %}
+    </footer>
+  </div>
 </body>
 </html>

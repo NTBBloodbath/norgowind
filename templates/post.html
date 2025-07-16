@@ -10,17 +10,17 @@
       {# Date, reading time #}
       <span>
         <time
-          class="text-grey text-sm md:text-md lg:text-lg tabular-nums text-opacity-70 dark:text-opacity-100"
+          class="text-grey text-sm md:text-md tabular-nums text-opacity-70 dark:text-opacity-100"
           datetime="{{ metadata.created }}"
-        >{{ metadata.created | date(format="%B %e, %Y") }}</time>
+          >{{ metadata.created | date(format="%B %e, %Y") }}</time>
       </span>
     </div>
     {% if metadata.categories | length > 0 %}
       <div class="flex items-center">
-        <span class="font-semibold">Tags:&nbsp;</span>
+        <span class="font-semibold mr-px">Tags:&nbsp;</span>
         {% for category in metadata.categories %}
           <a
-            class="bg-grey hover:bg-blue text-base hover:text-base! no-underline! hover:no-underline! text-sm mr-2 last:mr-0 md:py-1 px-1 md:px-2 rounded-md"
+            class="bg-grey hover:bg-blue text-base hover:text-base! no-underline! hover:no-underline! text-sm mr-2 last:mr-0 px-1 rounded-sm"
             href="/categories/{{ category }}"
           >
             {{ category | capitalize }}
@@ -30,26 +30,35 @@
     {% endif %}
   </div>
 </div>
-<div x-data="toc" class="mt-4">
-  {% if metadata.toc %}
+{% if metadata.toc %}
+  <div x-data="toc" class="mt-4">
     {% set toc_html = generate_toc(toc=metadata.toc, list_type="ol") %}
-    <button @click="toggle" type="button" class="inline-flex items-center">
+    <button @click="toggle()" type="button" class="inline-flex items-center">
       <span class="sr-only">Close Table of Contents</span>
       <h3 class="mt-0! mr-1">
         Table of Contents
       </h3>
       <span
-        :class="{ 'ti-arrow-badge-up-filled': open }"
-        class="text-2xl hover:text-blue ti ti-arrow-badge-down-filled"
+        id="toc-toggle-icon"
+        class="transition-all duration-300 ease-in-out text-2xl hover:text-blue ti ti-arrow-badge-right-filled"
       ></span>
     </button>
-    <nav x-show="open" class="toc">
+    <nav
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-300"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      x-show="open"
+      class="toc"
+    >
       {{ toc_html | safe }}
     </nav>
-  {% endif %}
-</div>
-<hr class="text-base-alt mt-12 lg:mt-14" />
-<div class="mt-12 lg:mt-14 break-keep">
+  </div>
+{% endif %}
+<hr class="mt-12" />
+<div class="mt-10 break-keep">
   {{ content | safe }}
 </div>
 {% endblock content %}

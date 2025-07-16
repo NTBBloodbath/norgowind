@@ -15,7 +15,7 @@ lith theme pull github:NTBBloodbath/norgowind
 > [!TIP]
 >
 > As Norgowind has been written using the standalone TailwindCSS CLI, you might want to use it if
-> you plan to modify the CSS of the theme by hand.
+> you plan to modify the CSS of the theme by hand. See the [Tailwind Reloading](#tailwind-reloading) section.
 
 ### Configuration
 Besides the default `norgolith.toml` configuration options, Norgowind theme also requires the following configuration fields to be present:
@@ -62,6 +62,32 @@ layout: post
 > [!TIP]
 >
 > Remember that Norgolith expects your blog posts to reside in the `content/posts` directory.
+
+### Additional styling
+Norgowind adds certain additional styling classes for blockquotes (add them to your blockquotes
+using `+html.class` weak carryover tags):
+- `tip` (green)
+- `note` (blue)
+- `important` (violet)
+- `warning` (yellow)
+- `error` (red)
+
+### Additional metadata fields
+Norgowind also accepts and uses the following opt-in content metadata:
+
+- `truncate`: configures the truncate characters length in the recent post cards.
+- `truncate_char`: configures the truncate character, do not define it to use the default ellipsis. Leave it empty to disable the truncate character.
+
+### Tailwind Reloading
+By default, Tailwind's configuration in Norgowind will see content files, along with user and theme
+templates. Each new class added to content using a weak carryover tag `+html.class` will
+automatically be added to the styling file.
+
+It is highly recommended to have the TailwindCSS CLI installed and run the following command during
+development:
+```sh
+tailwindcss -i theme/assets/css/tailwind.css -o theme/assets/css/styles.min.css --watch
+```
 
 ## License
 Norgowind is licensed under MIT license.
