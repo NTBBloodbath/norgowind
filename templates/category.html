@@ -3,9 +3,8 @@
 {% block content %}
 <div>
   <h1>Posts in {{ category }}</h1>
-  <p class="text-lg"><i>All the posts with the category "{{ category }}"</i></p>
-  <hr class="text-base-alt mt-6 lg:mt-8" />
-  <ul class="mt-6 lg:mt-8">
+  <p class="text-sm text-text/70"><i>All the posts with the category "{{ category }}"</i></p>
+  <ul class="mt-6 pt-6 border-t border-t-base-alt dark:border-t-[#39394b]">
     {% for post in posts %}
       {% if category in post.categories %}
         <li>

@@ -130,6 +130,7 @@ a {
 }
 
 hr {
+  /* brightness-120 = #39394b */
   @apply text-base-alt dark:brightness-120;
 }
 
@@ -168,8 +169,13 @@ h4 {
   counter-increment: h4;
 }
 
+h5 {
+  counter-increment: h5;
+}
+
 h6 {
   @apply font-semibold;
+  counter-increment: h6;
 }
 
 p {
@@ -202,6 +208,7 @@ main ul {
   @apply pl-4;
 }
 
+/* Margins */
 main h2, article h2, section h2 {
   @apply mt-10;
 }
@@ -216,6 +223,23 @@ main h5, article h5, section h5 {
 }
 main h6, article h6, section h6 {
   @apply mt-2;
+}
+
+/* Visual flair */
+main div#content h2:not(:first-child) {
+  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-5;
+}
+main div#content h3:not(:first-child) {
+  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-4;
+}
+main div#content h4:not(:first-child) {
+  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-3;
+}
+main div#content h5:not(:first-child) {
+  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-2;
+}
+main div#content h6:not(:first-child) {
+  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-1;
 }
 
 blockquote {

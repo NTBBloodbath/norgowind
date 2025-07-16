@@ -4,8 +4,8 @@
 <div>
   <h1>{{ metadata.title }}</h1>
 </div>
-<div class="flex flex-row">
-  <div class="flex flex-1 items-center justify-between">
+<div class="flex flex-col md:flex-row">
+  <div class="flex flex-col md:flex-row flex-1 justify-between">
     <div>
       {# Date, reading time #}
       <span>
@@ -16,11 +16,11 @@
       </span>
     </div>
     {% if metadata.categories | length > 0 %}
-      <div class="flex items-center">
+      <div class="flex flex-wrap items-center max-w-[50%]">
         <span class="font-semibold mr-px">Tags:&nbsp;</span>
         {% for category in metadata.categories %}
           <a
-            class="bg-grey hover:bg-blue text-base hover:text-base! no-underline! hover:no-underline! text-sm mr-2 last:mr-0 px-1 rounded-sm"
+            class="w-fit bg-grey hover:bg-blue text-base hover:text-base! no-underline! hover:no-underline! text-sm mr-2 last:mr-0 px-1 rounded-sm"
             href="/categories/{{ category }}"
           >
             {{ category | capitalize }}
@@ -57,8 +57,7 @@
     </nav>
   </div>
 {% endif %}
-<hr class="mt-12" />
-<div class="mt-10 break-keep">
+<div id="content" class="mt-12 break-keep pt-10 border-t border-t-base-alt dark:border-t-[#39394b]">
   {{ content | safe }}
 </div>
 {% endblock content %}
