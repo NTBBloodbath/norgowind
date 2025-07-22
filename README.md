@@ -25,6 +25,7 @@ Besides the default `norgolith.toml` configuration options, Norgowind theme also
 [extra]
 license = "GPLv2" # Optional
 footer_author_link = "https://github.com/NTBBloodbath" # Optional
+enable_mermaid = true # If you want to use Mermaid.js for diagrams and charts
 
 # Link_name = "url"
 # e.g.
