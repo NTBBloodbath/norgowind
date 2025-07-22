@@ -4,6 +4,7 @@
 {{ content | safe }}
 
 {# Latest 5 non-draft blog posts, ordered automatically by date #}
+{% if posts | filter(attribute="draft", value=false) | length > 0 %}
 <section>
   <h2>Recent posts</h2>
   {% for post in posts | filter(attribute="draft", value=false) | slice(end=5) %}
@@ -27,5 +28,6 @@
     </div>
   {% endfor %}
 </section>
+{% endif %}
 
 {% endblock content %}
