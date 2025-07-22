@@ -24,6 +24,7 @@ Besides the default `norgolith.toml` configuration options, Norgowind theme also
 # Custom additional configuration options with example values
 [extra]
 license = "GPLv2" # Optional
+favicon_path = "/assets/norgolith.svg" # Fallback to the default norgolith favicon
 footer_author_link = "https://github.com/NTBBloodbath" # Optional
 enable_mermaid = true # If you want to use Mermaid.js for diagrams and charts
 

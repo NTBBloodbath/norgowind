@@ -117,7 +117,11 @@
 
   {# Styling and favicon #}
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
+  {% if config.extra.favicon_path is defined and config.extra.favicon_path is string %}
+  <link rel="icon" href={{ config.extra.favicon_path }} />
+  {% else %}
   <link rel="icon" href="/assets/norgolith.svg" />
+  {% endif %}
 
   <title>{% block title %}{% endblock title %} - {{ config.title | title }}</title>
   {% endblock head %}
