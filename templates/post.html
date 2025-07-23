@@ -8,11 +8,13 @@
   <div class="flex flex-col md:flex-row flex-1 justify-between">
     <div>
       {# Date, reading time #}
-      <span>
-        <time
-          class="text-grey text-sm md:text-md tabular-nums text-opacity-70 dark:text-opacity-100"
-          datetime="{{ metadata.created }}"
-          >{{ metadata.created | date(format="%B %e, %Y") }}</time>
+      {% set created = metadata.created | date(format="%B %e, %Y") %}
+      {% set updated = metadata.updated | date(format="%B %e, %Y") %}
+      <span class="text-grey text-sm tabular-nums text-opacity-70 dark:text-opacity-100 space-x-1">
+        <time datetime="{{ metadata.created }}">{{ created }}</time>
+        {% if created != updated %}
+        (Last edit: <time datetime="{{ metadata.updated }}">{{ metadata.updated | date(format="%B %e, %Y") }}</time>)
+        {% endif %}
       </span>
     </div>
     {% if metadata.categories | length > 0 %}
