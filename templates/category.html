@@ -8,8 +8,10 @@
     {% for post in posts %}
       {% if category in post.categories %}
         <li>
-          <a class="font-mono text-xl no-underline! hover:underline! hover:decoration-dashed" href="{{ post.permalink }}">{{ post.title }}</a>
-          <time class="text-grey text-sm italic"> on <strong>{{ post.created | date(format="%B %e, %Y") }}</strong></time>
+          <div class="flex flex-col md:flex-row space-x-4">
+            <a class="font-mono text-lg w-fit no-underline! hover:underline! hover:decoration-dashed" href="{{ post.permalink }}">{{ post.title }}</a>
+            <time class="text-grey text-sm italic"> on <strong>{{ post.created | date(format="%B %e, %Y") }}</strong></time>
+          </div>
         </li>
       {% endif %}
     {% endfor %}
