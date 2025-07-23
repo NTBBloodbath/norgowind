@@ -308,7 +308,7 @@ nav.toc ul li ul {
 pre[class*="language-"],
 code[class*="language-"] {
   font-variant-ligatures: common-ligatures !important;
-  @apply bg-base-alt! font-mono! text-shadow-none!;
+  @apply bg-surface! dark:bg-base-alt font-mono! text-shadow-none!;
 }
 
 /* PrismJS line-numbers plugin */
@@ -334,4 +334,14 @@ pre[class*="language-"].line-numbers > code {
 .line-numbers-rows > span:before {
   content: counter(linenumber);
   @apply text-grey! text-right pr-2 block;
+}
+
+/* Center MermaidJS charts and diagrams */
+pre.mermaid {
+  @apply flex justify-center;
+}
+
+/* Automatic dark theme for MermaidJS */
+.dark .mermaid {
+  filter: invert(0.9) hue-rotate(180deg);
 }

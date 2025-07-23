@@ -90,7 +90,7 @@ automatically be added to the styling file.
 It is highly recommended to have the TailwindCSS CLI installed and run the following command during
 development:
 ```sh
-tailwindcss -i theme/assets/css/tailwind.css -o theme/assets/css/styles.min.css --watch
+tailwindcss -i theme/assets/css/tailwind.css -o theme/assets/css/styles.min.css --minify --watch
 ```
 
 ## License
