@@ -35,7 +35,7 @@
     {% elif config.highlighter.engine is defined
         and config.highlighter.engine == "hljs" %}
       {# Highlight.js #}
-      <link rel="stylesheet" rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
       <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
       <script>hljs.highlightAll();</script> #}
       {# Enable this one instead if you want all the `<code>` tags to be highlighted
@@ -113,7 +113,7 @@
   {% endif %}
 
   {# Icons #}
-  <link rel="stylesheet" rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.28.1/tabler-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.28.1/tabler-icons.min.css">
 
   {# Styling and favicon #}
   <link rel="stylesheet" href="/assets/css/styles.min.css" />
