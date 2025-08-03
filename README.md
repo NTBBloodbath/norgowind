@@ -5,6 +5,22 @@ Norgolith <3 TailwindCSS.
 
 If you want to see this theme in action, you can either go to [my blog](https://amartin.beer) or even the [official Norgolith documentation](https://norgolith.amartin.beer).
 
+### Showcase
+
+<details>
+  <summary>Home page</summary>
+
+  <img width="1904" height="1212" alt="image" src="https://github.com/user-attachments/assets/c66ac751-cb0a-4cd5-bc8c-bf10b6414997" />
+
+</details>
+
+<details>
+  <summary>Post view</summary>
+
+  <img width="1904" height="1064" alt="image" src="https://github.com/user-attachments/assets/77a47b5c-b9d3-409e-a022-5493f049b968" />
+
+</details>
+
 ## Installation
 ```bash
 lith theme pull github:NTBBloodbath/norgowind
