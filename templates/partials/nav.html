@@ -1,7 +1,7 @@
 <nav x-data="menu" class="container mx-auto px-4 md:px-0 font-mono">
   <div class="flex items-center justify-between h-16">
     <!-- Logo and dark mode -->
-    <div x-data="theme" class="flex items-center shrink-0">
+    <div x-data="theme" class="flex items-center shrink-0 space-x-2">
       <a href="/" class="flex items-center space-x-2">
         <!-- <img src="{{ config.rootUrl }}/assets/norgolith.svg" alt="Norgolith Logo" class="h-8 w-8"> -->
         <span class="text-lg md:text-xl font-bold text-text">{{ config.title | title }}</span>
@@ -9,7 +9,7 @@
       <button
         @click="toggle()"
         type="button"
-        class="ml-4 rounded-lg flex items-center"
+        class="rounded-lg flex items-center"
         :aria-label="current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
       >
         <i
