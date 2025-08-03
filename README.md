@@ -85,7 +85,23 @@ layout: post
 >
 > Remember that Norgolith expects your blog posts to reside in the `content/posts` directory.
 
-### Additional styling
+### MermaidJS Support
+Norgowind comes with opt-in support for MermaidJS flowcharts. You can use mermaid charts through embedded HTML in your norg content if you set the `enable_mermaid` option to `true` in the `extra` table of your configuration file:
+```org
+@embed html
+<pre class="mermaid">
+  flowchart LR
+  A[HTML Fragment] --> B[Tera Engine]
+  C[Validated Metadata] --> B
+  D[Site Config] --> B
+  E[Post Collection] --> B
+  B --> F[Layout Template]
+  F --> G[Final HTML]
+</pre>
+@end
+```
+
+### Additional Styling
 Norgowind adds certain additional styling classes for blockquotes (add them to your blockquotes
 using `+html.class` weak carryover tags):
 - `tip` (green)
@@ -96,7 +112,7 @@ using `+html.class` weak carryover tags):
 
 ![blockquotes.png](https://github.com/user-attachments/assets/d45e2e97-5e3b-43cb-8077-a16f737259b9)
 
-### Additional metadata fields
+### Additional Metadata Fields
 Norgowind also accepts and uses the following opt-in content metadata:
 
 - `truncate`: configures the truncate characters length in the recent post cards.
