@@ -1,4 +1,15 @@
 {% extends "base.html" %}
+{% block seo_tags %}
+<meta property="og:title" content="Categories - {{ config.title | title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ config.rootUrl }}/categories" />
+<meta property="og:description" content="Posts categories" />
+<meta property="og:site_name" content="{{ config.title }}" />
+<meta property="og:locale" content="{{ config.language }}" />
+{# TODO: add support for og:image using metadata #}
+<link rel="canonical" href="{{ config.rootUrl }}/categories" />
+<meta name="robots" content="index, follow" />
+{% endblock seo_tags %}
 {% block title %}Categories{% endblock title %}
 {% block content %}
 <div>

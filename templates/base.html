@@ -17,6 +17,9 @@
   <meta name="keywords" content="{{ metadata.categories | join(sep=", ") }}" />
   {% endif %}
 
+  {# SEO Meta Tags #}
+  {% block seo_tags %}{% endblock seo_tags %}
+
   {# Syntax highlighter #}
   {% if config.highlighter is defined and config.highlighter.enable %}
     {# If highlighter is enabled but the engine is not defined then fallback to prismjs #}
